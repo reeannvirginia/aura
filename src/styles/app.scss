@@ -1,0 +1,78 @@
+@import 'color-themes';
+@import 'sidebar';
+@import 'floating-text';
+@import 'toggle';
+@import 'homepage';
+@import 'about';
+@import 'work';
+@import 'contact';
+
+:root {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 56px auto;
+  grid-template-rows: 1fr 3fr;
+  height: 100%;
+  transition: all 0.3s;
+  @include themed() {
+    border: 6px solid t('sidebar');
+    border-width: 6px 6px 6px 0px;
+    background: t('bg');
+  }
+}
+
+.darkModeToggle {
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  right: 0;
+}
+
+.headline {
+  padding-left: 40px;
+  align-self: flex-end;
+  font-family: $fontSecondary;
+  // background-image: linear-gradient(to right, #b393b3, #d8d8c3, #695a73);
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // color: transparent;
+  // white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s ease;
+  // @include themed() {
+  //   color: t('font');
+  // }
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}

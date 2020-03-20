@@ -1,0 +1,29 @@
+.contactContainer {
+  display: grid;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: $fontFamily;
+  @include themed() {
+    background-color: t('sidebar');
+    color: t('font');
+  }
+}
+.contactDetails {
+  width: 50%;
+  padding: 60px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  & p {
+    font-size: 24px;
+  }
+}
+.contactOption {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 30px;
+    margin-right: 16px;
+  }
+}

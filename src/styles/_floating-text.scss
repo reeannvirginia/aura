@@ -1,0 +1,50 @@
+.text {
+  background-image: linear-gradient(to right, #b393b3, #d8d8c3, #695a73);
+  background-clip: text;
+  font-weight: 700;
+  font-family: 'Bellota Text', cursive;
+  opacity: 0;
+  -webkit-background-clip: text;
+  color: transparent;
+  mix-blend-mode: luminosity;
+}
+.orange {
+  font-size: 32px;
+  margin: auto 0px;
+  animation: float-first 3s infinite;
+}
+.apple {
+  text-align: right;
+  font-size: 28px;
+  animation: float-first 3s infinite;
+  animation-delay: 2s;
+}
+.strawberry {
+  font-size: 24px;
+  text-align: center;
+  animation: float-first 3s infinite;
+  animation-delay: 1s;
+}
+.grapefruit {
+  font-size: 20px;
+  animation: float-first 3s infinite;
+  animation-delay: 1.5s;
+  text-align: right;
+}
+.mango {
+  font-size: 18px;
+  animation: float-first 3s infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes float-first {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

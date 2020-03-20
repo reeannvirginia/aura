@@ -1,0 +1,59 @@
+// shortcuts
+$bg: 'bg';
+$sidebar: 'sidebar';
+$font: 'font';
+$floatingText: 'floatingText';
+$navLink: 'navLink';
+// $light: #f9f6f6;
+$light: white;
+$lightText: rgb(180, 132, 132);
+$dark: #181818;
+$neonTextColor: #02a6f2;
+$fontFamily: 'Bellota Text', cursive;
+$fontSecondary: 'Montserrat', sans-serif;
+$darkAccent: #4a4949;
+
+// themes
+$themes: (
+  light: (
+    bg: $light,
+    sidebar: #e0d2d2,
+    font: $dark,
+    floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
+    navLink: grey,
+    boxShadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4),
+    boxShadowEnhanced: 0px 2px 8px 0px rgba(0, 0, 0, 0.4),
+  ),
+  dark: (
+    bg: $dark,
+    sidebar: $darkAccent,
+    font: $light,
+    floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
+    navLink: $light,
+    boxShadow: 0px 0px 5px 0px rgb(128, 121, 121),
+    boxShadowEnhanced: 0px 0px 10px 1px rgb(128, 121, 121),
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

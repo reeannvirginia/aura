@@ -1,0 +1,43 @@
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 45% auto;
+  grid-gap: 24px;
+  transition: all 0.3s;
+  padding: 40px;
+  @include themed() {
+    color: t('font');
+    font-family: $fontFamily;
+  }
+}
+
+.location {
+  font-weight: 700;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  @include themed() {
+    color: t('font');
+  }
+}
+
+.aboutPhoto {
+  text-align: center;
+}
+.reePhoto {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  @include themed() {
+    border: 2px solid t('font');
+  }
+}
+.skillIcons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+  & i {
+    font-size: 34px;
+  }
+}
