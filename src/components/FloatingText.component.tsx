@@ -14,7 +14,6 @@ const FloatingText = ({ idx, text }: Props) => {
     left: Math.abs(Math.random() * window.innerWidth - 100),
     bottom: Math.abs(Math.random() * window.innerHeight),
   };
-  console.log(position);
   return (
     <span key={text} style={{ position: 'absolute', ...position }} className={`text ${className}`}>
       {text}

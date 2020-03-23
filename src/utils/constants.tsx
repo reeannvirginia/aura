@@ -1,8 +1,8 @@
 export const pages = [
-  { display: '', icon: 'home' },
-  { display: 'about', icon: 'user-female' },
-  { display: 'work', icon: 'laptop' },
-  { display: 'contact', icon: 'ringing-phone' },
+  { display: 'home', icon: 'home', url: '/' },
+  { display: 'about', icon: 'user-female', url: '/about' },
+  { display: 'work', icon: 'laptop', url: '/work' },
+  { display: 'contact', icon: 'ringing-phone', url: '/contact' },
 ];
 
 export const links = [

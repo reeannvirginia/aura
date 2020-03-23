@@ -26,7 +26,7 @@ const Homepage = () => {
       }
       setTimeout(_ => setIntro((txt: string) => txt + '.'), 100);
     };
-    typeWriter();
+    setTimeout(() => typeWriter(), 1000);
   }, []);
 
   return (
@@ -35,7 +35,6 @@ const Homepage = () => {
         <p className={`name ${mode}`}>{intro}&nbsp;</p>
         <p className={`tagline ${mode}`}>I'm a frontend developer based in Miami, FL.</p>
         <p className={`tagline ${mode}`}>I like building clean, modern interfaces.</p>
-        {/* <span className="darkMode">But I don't mind a bit of chaos.</span> */}
       </div>
       <div className="skillsCloud">
         {skills.map((skill, idx) => (

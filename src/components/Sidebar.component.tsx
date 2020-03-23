@@ -1,35 +1,50 @@
-import React from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
-
-export interface Props {
-  pages: NavItem[];
-  links: NavItem[];
-}
+import React, { useEffect, useState, useContext } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import classNames from 'classnames';
+import { pages, links } from '../utils/constants';
+import { AppContext } from '../AppContext';
 
 export interface NavItem {
   display: string;
   icon: string;
-  url?: string;
+  url: string;
 }
 
-const Sidebar = ({ pages, links }: Props) => {
+const Sidebar = () => {
+  const { transition, updateTransition } = useContext(AppContext);
   const [{ pathname }, history] = [useLocation(), useHistory()];
+  const [activePage, setActivePage] = useState(pathname);
+  const [initial, setInitial] = useState(true);
 
-  const handleOnClick = () => {
-    history.push('/home');
-  };
+  useEffect(() => void setInitial(false), []);
+
+  useEffect(() => {
+    if (!initial) {
+      updateTransition(true);
+      setTimeout(() => {
+        history.push(activePage);
+        setTimeout(() => {
+          updateTransition(false);
+        }, 1000);
+      }, 1000);
+    }
+  }, [activePage]);
 
   return (
-    <div className="sidebarContainer">
-      <div className="sidebarTop" onClick={handleOnClick} role="button" tabIndex={0}>
+    <div className={classNames('sidebarContainer', { transition })}>
+      <div className="sidebarTop" onClick={() => setActivePage('/home')} role="button" tabIndex={0}>
         <p className="logo">r</p>
         <p className="logo">h</p>
       </div>
       <div className="navigation">
-        {pages.map(({ display }: NavItem) => (
-          <NavLink key={display} className={`navLink ${pathname === `/${display}` && 'activeLink'}`} to={`${display}`}>
+        {pages.map(({ display, url }: NavItem) => (
+          <div
+            key={display}
+            className={classNames('navLink', { active: url === activePage })}
+            onClick={() => setActivePage(url)}
+          >
             <i className={display || 'home'} />
-          </NavLink>
+          </div>
         ))}
       </div>
       <div className="sidebarFooter">

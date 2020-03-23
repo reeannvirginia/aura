@@ -42,7 +42,6 @@ code {
     background: t('bg');
   }
 }
-
 .darkModeToggle {
   position: absolute;
   top: 20px;
@@ -58,12 +57,13 @@ code {
   // background-clip: text;
   // -webkit-background-clip: text;
   // color: transparent;
-  // white-space: nowrap;
+  white-space: nowrap;
+  width: 100%;
   overflow: hidden;
   animation: typing 3.5s ease;
-  // @include themed() {
-  //   color: t('font');
-  // }
+  @include themed() {
+    color: t('font');
+  }
 }
 
 @keyframes typing {
