@@ -15,7 +15,6 @@
   padding: 24px;
   text-decoration: none;
   min-width: 200px;
-  min-height: 300px;
   cursor: pointer;
   font-family: $fontSecondary;
   transition: all 0.4s;
@@ -42,11 +41,14 @@
   justify-content: space-between;
   height: 100%;
   box-sizing: border-box;
-  & .title {
+  & span:first-child {
     font-weight: 700;
   }
-}
-
-.title {
-  font-size: 16px;
+  & span {
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+  @media (max-width: $small) {
+    font-size: 12px;
+  }
 }

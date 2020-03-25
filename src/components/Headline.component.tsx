@@ -9,7 +9,7 @@ interface Headline {
 const headlines: Headline = {
   about: 'about me',
   work: 'recent work and projects',
-  contact: 'interested in working together?',
+  contact: "let's work together!",
 };
 
 const Headline = () => {

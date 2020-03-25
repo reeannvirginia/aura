@@ -64,6 +64,9 @@ code {
   @include themed() {
     color: t('font');
   }
+  @media (max-width: $small) {
+    font-size: 18px;
+  }
 }
 
 @keyframes typing {

@@ -18,7 +18,7 @@ const Work = () => {
           <a key={name} className="projectContainer" href={url} target="_blank" rel="noopener noreferrer">
             <img src={image} alt={name} />
             <div className="projectDescription">
-              <span className="title">{name}</span>
+              <span className="description">{name}</span>
               <span className="description">{description}</span>
               <span className="description">{highlights}</span>
             </div>
