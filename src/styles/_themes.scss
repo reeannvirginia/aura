@@ -1,21 +1,31 @@
 //sizes
-$small: 400px;
+$xSmall: 350px;
+$small: 430px;
 $medium: 900px;
+$large: 1024px;
+
+// font-sizes
+$xSmallPadding: 16px;
+$xSmallHeader: 16px;
+$xSmallText: 10px;
 
 // other colors
+// $light: #f4faff;
 $light: white;
 $lightText: rgb(180, 132, 132);
-$dark: #181818;
+$dark: black;
 $neonTextColor: #02a6f2;
 $fontFamily: 'Bellota Text', cursive;
 $fontSecondary: 'Montserrat', sans-serif;
 $darkAccent: #4a4949;
+$lightAccent: #c9c4cc;
 
 // themes
 $themes: (
   light: (
     bg: $light,
-    sidebar: #e0d2d2,
+    sidebar: $dark,
+    sidebarFont: $light,
     font: $dark,
     floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
     navLink: grey,
@@ -24,7 +34,8 @@ $themes: (
   ),
   dark: (
     bg: $dark,
-    sidebar: $darkAccent,
+    sidebar: $lightAccent,
+    sidebarFont: $dark,
     font: $light,
     floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
     navLink: $light,

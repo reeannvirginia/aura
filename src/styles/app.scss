@@ -1,5 +1,5 @@
-@import 'color-themes';
-@import 'sidebar';
+@import 'themes';
+@import 'components';
 @import 'floating-text';
 @import 'toggle';
 @import 'homepage';
@@ -7,17 +7,42 @@
 @import 'work';
 @import 'contact';
 
-:root {
-  overflow: hidden;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow: scroll;
+  & h1 {
+    font-size: 400%;
+  }
+  & h2 {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+  }
+  & h3 {
+    line-height: 2;
+  }
+  @media (max-width: $large) {
+    & h1 {
+      font-size: 350%;
+    }
+    & svg {
+      font-size: 100%;
+    }
+  }
+  @media (max-width: $small) {
+    & h1 {
+      font-size: 200%;
+    }
+    & h3 {
+      font-size: 80%;
+    }
+    & p {
+      font-size: 80%;
+    }
+  }
 }
 
 code {
@@ -26,46 +51,46 @@ code {
 
 .App {
   height: 100vh;
+  width: 100vw;
 }
 
 .wrapper {
-  width: 100vw;
-  box-sizing: border-box;
+  width: 100%;
   display: grid;
-  grid-template-columns: 56px auto;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 14fr;
   height: 100%;
   transition: all 0.3s;
   @include themed() {
-    border: 6px solid t('sidebar');
-    border-width: 6px 6px 6px 0px;
     background: t('bg');
   }
 }
 .darkModeToggle {
   position: absolute;
-  top: 20px;
-  z-index: 10;
+  top: 16px;
   right: 0;
 }
-
+.contentContainer {
+  height: 100%;
+  position: relative;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr 3fr;
+  grid-gap: 24px;
+  height: 100%;
+}
 .headline {
-  padding-left: 40px;
   align-self: flex-end;
   font-family: $fontSecondary;
-  // background-image: linear-gradient(to right, #b393b3, #d8d8c3, #695a73);
-  // background-clip: text;
-  // -webkit-background-clip: text;
-  // color: transparent;
   white-space: nowrap;
   width: 100%;
   overflow: hidden;
+  font-weight: 800;
   animation: typing 3.5s ease;
+  grid-column: 2/3;
   @include themed() {
     color: t('font');
-  }
-  @media (max-width: $small) {
-    font-size: 18px;
   }
 }
 

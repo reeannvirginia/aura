@@ -7,19 +7,23 @@ export const pages = [
 
 export const links = [
   {
-    display: 'resume',
-    icon: 'https://img.icons8.com/small/32/000000/open-resume.png',
-    url: process.env.PUBLIC_URL + '/assets/resume.pdf',
-  },
-  {
     display: 'linkedin',
-    icon: 'https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png',
+    // icon: 'https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png',
+    icon: 'fab fa-linkedin-in',
     url: 'https://www.linkedin.com/in/reeann-hansen-2943b05a/',
   },
   {
     display: 'github',
-    icon: 'https://img.icons8.com/material-sharp/24/000000/github.png',
+    // icon: 'https://img.icons8.com/material-sharp/24/000000/github.png',
+    icon: 'fab fa-github',
     url: 'https://github.com/reeannvirginia',
+  },
+  {
+    display: 'resume',
+    // icon: 'https://img.icons8.com/small/32/000000/open-resume.png',
+    icon: 'fas fa-file-alt',
+
+    url: process.env.PUBLIC_URL + '/assets/resume.pdf',
   },
 ];
 
@@ -27,6 +31,7 @@ export const skills = [
   'git',
   'react',
   'javascript',
+  'responsive design',
   'ruby',
   'graphql',
   'typescript',

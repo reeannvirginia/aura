@@ -9,7 +9,7 @@ interface Headline {
 const headlines: Headline = {
   about: 'about me',
   work: 'recent work and projects',
-  contact: "let's work together!",
+  contact: "let's work together",
 };
 
 const Headline = () => {
@@ -17,7 +17,7 @@ const Headline = () => {
   const { pathname } = useLocation();
   const currentPath: string = pathname.split('/')[1];
   if (!currentPath || transition) return <div />;
-  return <h1 className="headline">{headlines[currentPath]}</h1>;
+  return <h2 className="headline">{headlines[currentPath]}</h2>;
 };
 
 export default memo(Headline);

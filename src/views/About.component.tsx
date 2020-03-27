@@ -1,4 +1,5 @@
 import React from 'react';
+import ReeImage from '../assets/profile.png';
 
 const About = () => {
   return (
@@ -17,10 +18,6 @@ const About = () => {
           I maintain balance with exercise, travel, reading and working towards my goal of owning a dog [or two] one
           day.
         </p>
-        <span className="location">
-          <i className="fa fa-map-marked-alt" />
-          &nbsp; Based in Miami, FL.
-        </span>
         <h3>Skills</h3>
         <div className="skillIcons">
           <i className="devicon-javascript-plain" />
@@ -32,7 +29,7 @@ const About = () => {
         </div>
       </div>
       <div className="aboutPhoto">
-        <img className="reePhoto" src={process.env.PUBLIC_URL + `/assets/profile.png`} alt="profile" />
+        <img className="reePhoto" src={ReeImage} alt="profile" />
       </div>
     </div>
   );

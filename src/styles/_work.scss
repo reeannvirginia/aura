@@ -1,12 +1,10 @@
 .workContainer {
-  align-items: center;
-  padding: 24px;
-  overflow: scroll;
+  grid-area: 2/3/3/2;
 }
 .workGrid {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 285px));
   grid-gap: 36px;
 }
 .projectContainer {
@@ -47,8 +45,5 @@
   & span {
     line-height: 1.5;
     margin-top: 12px;
-  }
-  @media (max-width: $small) {
-    font-size: 12px;
   }
 }

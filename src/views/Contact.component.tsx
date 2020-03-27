@@ -31,6 +31,10 @@ const Work = () => {
             <span>{display}</span>
           </div>
         ))}
+        <span className="location">
+          <i className="fa fa-map-marked-alt" />
+          &nbsp; Based in Miami, FL.
+        </span>
       </div>
     </div>
   );

@@ -3,7 +3,8 @@
   grid-template-columns: 45% auto;
   grid-gap: 24px;
   transition: all 0.3s;
-  padding: 40px;
+  overflow: scroll;
+  grid-area: 2/3/3/2;
   @include themed() {
     color: t('font');
     font-family: $fontFamily;
@@ -11,7 +12,6 @@
   @media (max-width: $small) {
     display: flex;
     flex-flow: column-reverse;
-    font-size: 10px;
     justify-content: center;
     align-items: center;
   }
@@ -19,7 +19,6 @@
 
 .location {
   font-weight: 700;
-  font-size: 14px;
   overflow: hidden;
   white-space: nowrap;
   @include themed() {
@@ -27,14 +26,18 @@
   }
 }
 .aboutPhoto {
-  text-align: center;
+  margin: 0px auto;
+  max-width: 375px;
+  @media (max-width: $small) {
+    width: 50%;
+    height: 50%;
+  }
 }
 .reePhoto {
-  width: 100%;
-  max-width: 400px;
-  max-height: 400px;
   border-radius: 50%;
+  width: 100%;
   transition: all 0.3s;
+  box-sizing: border-box;
   @include themed() {
     border: 2px solid t('font');
   }
