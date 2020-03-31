@@ -3,6 +3,7 @@
   font-weight: 700;
   background-position: right;
   font-family: $fontFamily;
+  transition: all 0.3s;
   @include themed() {
     background: t('gradient'), url(/background.jpeg) no-repeat fixed right;
     color: t('font');

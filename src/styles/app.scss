@@ -22,6 +22,8 @@ body {
   }
   & h3 {
     line-height: 2;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
   }
   @media (max-width: $large) {
     & h1 {

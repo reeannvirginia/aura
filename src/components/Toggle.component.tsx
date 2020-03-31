@@ -11,7 +11,7 @@ const Toggle = ({ darkMode, onChange, className }: Props) => {
     onChange(e.target.value === 'light' ? 'dark' : 'light');
   };
 
-  const src = darkMode === 'light' ? light : dark;
+  const src = darkMode === 'light' ? dark : light;
   return (
     <label htmlFor="toggle" className={`switch ${className}`}>
       <input type="checkbox" id="toggle" onChange={handleChange} value={darkMode} />
