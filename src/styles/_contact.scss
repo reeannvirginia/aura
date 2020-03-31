@@ -1,10 +1,11 @@
 .contactContainer {
   display: grid;
   font-weight: 700;
+  background-position: right;
   font-family: $fontFamily;
   @include themed() {
+    background: t('gradient'), url(/background.jpeg) no-repeat fixed right;
     color: t('font');
-    background-color: t('sidebar');
   }
 }
 .contactDetails {
@@ -12,7 +13,6 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  background-color: #e0d2d2;
   @include themed() {
     color: t('font');
   }

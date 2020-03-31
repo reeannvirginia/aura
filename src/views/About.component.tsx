@@ -12,12 +12,9 @@ const About = () => {
         </p>
         <p>
           Recently, my professional experience has involved more interaction and participation with product managers and
-          designers.
+          designers to understand clients&apos; problems and provide features that help simplify their workday.
         </p>
-        <p>
-          I maintain balance with exercise, travel, reading and working towards my goal of owning a dog [or two] one
-          day.
-        </p>
+        <p>I maintain balance with exercise, travel, reading and working towards my goal of owning a dog [or two].</p>
         <h3>Skills</h3>
         <div className="skillIcons">
           <i className="devicon-javascript-plain" />

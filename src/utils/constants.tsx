@@ -1,3 +1,5 @@
+import { breeze, go, storybook } from '../assets';
+
 export const pages = [
   { display: 'home', icon: 'home', url: '/' },
   { display: 'about', icon: 'user-female', url: '/about' },
@@ -8,22 +10,19 @@ export const pages = [
 export const links = [
   {
     display: 'linkedin',
-    // icon: 'https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png',
     icon: 'fab fa-linkedin-in',
     url: 'https://www.linkedin.com/in/reeann-hansen-2943b05a/',
   },
   {
     display: 'github',
-    // icon: 'https://img.icons8.com/material-sharp/24/000000/github.png',
     icon: 'fab fa-github',
     url: 'https://github.com/reeannvirginia',
   },
   {
     display: 'resume',
-    // icon: 'https://img.icons8.com/small/32/000000/open-resume.png',
     icon: 'fas fa-file-alt',
 
-    url: process.env.PUBLIC_URL + '/assets/resume.pdf',
+    url: process.env.PUBLIC_URL + '/resume.pdf',
   },
 ];
 
@@ -52,21 +51,21 @@ export const projects = [
     name: 'CareCloud Go',
     description: 'Next-generation cloud-based EHR/practice management software.',
     url: 'https://www.carecloud.com/go/',
-    image: process.env.PUBLIC_URL + 'assets/go.png',
+    image: go,
     highlights: 'Micro-frontend architecture, drag and drop views, realtime collaboration.',
   },
   {
     name: 'Breeze',
     description: 'An award-winning patient intake and registration app with 20k+ users.',
     url: 'https://www.carecloud.com/breeze/',
-    image: process.env.PUBLIC_URL + 'assets/breeze.jpg',
+    image: breeze,
     highlights: 'Migrated app from angular in 3.5 months with small team using React/Redux',
   },
   {
     name: 'Component Library',
     description: 'In-house React component library with 20+ reusable components.',
     url: 'https://storybook.js.org/',
-    image: process.env.PUBLIC_URL + 'assets/storybook.png',
+    image: storybook,
     highlights: 'Complete with smooth animations, accessibility, unit tests and without material-ui. ',
   },
 ];

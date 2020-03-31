@@ -34,7 +34,7 @@ const Homepage = () => {
       <div className="introduction">
         <h1 className={`name ${mode}`}>{intro}&nbsp;</h1>
         <h3 className={`tagline ${mode}`}>I'm a frontend developer based in Miami, FL.</h3>
-        <h3 className={`tagline ${mode}`}>I like building clean, modern interfaces.</h3>
+        <h3 className={`tagline ${mode}`}>I like building simples experiences for complex problems.</h3>
       </div>
       {/* <div className="skillsCloud">
         {skills.map((skill, idx) => (
