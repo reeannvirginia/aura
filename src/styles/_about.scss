@@ -3,8 +3,6 @@
   grid-template-columns: 45% auto;
   grid-gap: 24px;
   transition: all 0.3s;
-  overflow: scroll;
-  grid-area: 2/3/3/2;
   @include themed() {
     color: t('font');
     font-family: $fontFamily;

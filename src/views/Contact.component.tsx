@@ -23,18 +23,18 @@ const Work = () => {
   return (
     <div className="contactContainer">
       <div className="contactDetails">
-        <p>I'm always available to discuss new projects and meet new people. Big fan of coffee.</p>
-        <p> Also open to donating my time to charitable projects.</p>
+        <p>I'm always available to discuss new projects and meet new people. ☕️</p>
+        <p>I am also open to donating my time to charitable projects!</p>
         {contactInfo.map(({ type, display, src }: Contact) => (
           <div key={type} className="contactOption">
             <img src={src} alt="type" />
             <span>{display}</span>
           </div>
         ))}
-        <span className="location">
+        {/* <span className="location">
           <i className="fa fa-map-marked-alt" />
           &nbsp; Based in Miami, FL.
-        </span>
+        </span> */}
       </div>
     </div>
   );

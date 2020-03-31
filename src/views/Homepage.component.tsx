@@ -36,11 +36,11 @@ const Homepage = () => {
         <h3 className={`tagline ${mode}`}>I'm a frontend developer based in Miami, FL.</h3>
         <h3 className={`tagline ${mode}`}>I like building clean, modern interfaces.</h3>
       </div>
-      <div className="skillsCloud">
+      {/* <div className="skillsCloud">
         {skills.map((skill, idx) => (
           <FloatingText key={skill} text={skill} idx={idx} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

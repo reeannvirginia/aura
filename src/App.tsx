@@ -12,21 +12,19 @@ const App = () => {
     <ContextProvider>
       <BrowserRouter>
         <div className={`App theme-${value}`}>
-          <div className="wrapper">
-            <Header />
-            <div className="contentContainer">
-              <Toggle className="darkModeToggle" darkMode={value} onChange={setValue} />
-              <Navigation />
-              <div className="content">
-                <Headline />
-                <Switch>
-                  <Route path="/" exact component={Homepage} />
-                  <Route path="/about" exact component={About} />
-                  <Route path="/work" exact component={Work} />
-                  <Route path="/contact" exact component={Contact} />
-                  <Redirect to="/" />
-                </Switch>
-              </div>
+          <Header />
+          <div className="contentContainer">
+            <Toggle className="darkModeToggle" darkMode={value} onChange={setValue} />
+            <Navigation />
+            <div className="content">
+              <Headline />
+              <Switch>
+                <Route path="/" exact component={Homepage} />
+                <Route path="/about" exact component={About} />
+                <Route path="/work" exact component={Work} />
+                <Route path="/contact" exact component={Contact} />
+                <Redirect to="/" />
+              </Switch>
             </div>
           </div>
         </div>

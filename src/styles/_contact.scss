@@ -1,7 +1,6 @@
 .contactContainer {
   display: grid;
   font-weight: 700;
-  grid-area: 2/3/3/2;
   font-family: $fontFamily;
   @include themed() {
     color: t('font');
@@ -21,6 +20,7 @@
 .contactOption {
   display: flex;
   align-items: center;
+  height: 50px;
   & img {
     width: 30px;
     margin-right: 16px;

@@ -13,7 +13,6 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: scroll;
   & h1 {
     font-size: 400%;
   }
@@ -36,6 +35,9 @@ body {
     & h1 {
       font-size: 200%;
     }
+    & h2 {
+      font-size: 110%;
+    }
     & h3 {
       font-size: 80%;
     }
@@ -44,41 +46,48 @@ body {
     }
   }
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  height: 0;
+  width: 0;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+::-webkit-scrollbar-track {
+  height: 0;
+  width: 0;
 }
 
 .App {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
-
-.wrapper {
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 14fr;
-  height: 100%;
+.darkModeToggle {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.contentContainer {
+  height: inherit;
+  position: relative;
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
   @include themed() {
     background: t('bg');
   }
 }
-.darkModeToggle {
-  position: absolute;
-  top: 16px;
-  right: 0;
-}
-.contentContainer {
-  height: 100%;
-  position: relative;
-}
 .content {
   display: grid;
-  grid-template-columns: 1fr 10fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 20% auto;
   grid-gap: 24px;
-  height: 100%;
+  width: 84%;
+  height: calc(100% - 100px);
+  overflow: scroll;
 }
 .headline {
   align-self: flex-end;
@@ -88,7 +97,6 @@ code {
   overflow: hidden;
   font-weight: 800;
   animation: typing 3.5s ease;
-  grid-column: 2/3;
   @include themed() {
     color: t('font');
   }

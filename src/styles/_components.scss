@@ -37,12 +37,12 @@
 .navigationContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: fixed;
   top: 40%;
   width: 42px;
   border-radius: 0px 4px 4px 0;
   background: #e0d2d2;
+  left: 0;
   padding: 4px;
   @media (max-width: $small) {
     flex-direction: row;
