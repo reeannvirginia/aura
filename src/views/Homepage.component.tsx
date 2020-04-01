@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FloatingText } from '../components';
-import { skills } from '../utils/constants';
+// import { FloatingText } from '../components';
+// import { skills } from '../utils/constants';
 
 const Homepage = () => {
   const [intro, setIntro] = useState('');
@@ -33,7 +33,7 @@ const Homepage = () => {
     <div className="homepageContainer">
       <div className="introduction">
         <h1 className={`name ${mode}`}>{intro}&nbsp;</h1>
-        <h3 className={`tagline ${mode}`}>I'm a frontend developer based in Miami, FL.</h3>
+        <h3 className={`tagline ${mode}`}>I&apos;m a frontend developer based in Miami, FL.</h3>
         <h3 className={`tagline ${mode}`}>I like building simple experiences for complex problems.</h3>
       </div>
       {/* <div className="skillsCloud">

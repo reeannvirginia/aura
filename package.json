@@ -23,13 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:unit": "react-scripts test",
-    "test:lint": "eslint --ext .ts --ext .tsx .",
-    "test:lint:fix": "npm run lint -- --fix",
-    "test": "yarn test:lint && yarn test:unit"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint --ext .ts --ext .tsx ."
   },
   "browserslist": {
     "production": [

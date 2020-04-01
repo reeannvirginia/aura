@@ -6,9 +6,9 @@ const About = () => {
     <div className="aboutContainer">
       <div className="aboutDescription">
         <p>
-          I'm a front end developer with 2+ years programming experience specializing in React and pixel-perfect CSS.
-          I'm excited by subtle animations, conversations about design and delivering an intuitive user experience in a
-          complex workflow.
+          I&apos;m a front end developer with 2+ years programming experience specializing in React and pixel-perfect
+          CSS. I&apos;m excited by subtle animations, conversations about design and delivering an intuitive user
+          experience in a complex workflow.
         </p>
         <p>
           Recently, my professional experience has involved more interaction and participation with product managers and
