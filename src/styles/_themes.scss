@@ -17,11 +17,12 @@ $neonTextColor: #02a6f2;
 $fontFamily: 'Bellota Text', cursive;
 $fontSecondary: 'Montserrat', sans-serif;
 $darkAccent: #8e8888;
-$lightAccent: #e0d2d2;
+$lightAccent: #e8d7d7;
 
 // themes
 $themes: (
   light: (
+    rainbowText: linear-gradient(to right, $dark, #6f3894, #b9b95c),
     bg: $light,
     sidebar: $dark,
     nav: $lightAccent,
@@ -29,12 +30,13 @@ $themes: (
     font: $dark,
     gradient: linear-gradient(to right, rgba(224, 210, 210, 0.9), rgba(224, 210, 210, 0.65)),
     navLink: grey,
-    boxShadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4),
+    boxShadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.4),
     boxShadowEnhanced: 0px 2px 8px 0px rgba(0, 0, 0, 0.4),
   ),
   dark: (
+    rainbowText: linear-gradient(to right, $light, #b9b95c, #6f3894),
     bg: $dark,
-    sidebar: $lightAccent,
+    sidebar: $light,
     nav: $darkAccent,
     sidebarFont: $dark,
     font: $light,

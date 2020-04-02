@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-// import { FloatingText } from '../components';
-// import { skills } from '../utils/constants';
+import { skills } from '../utils/constants';
 
 const Homepage = () => {
   const [intro, setIntro] = useState('');
-  const storedMode = localStorage.getItem('theme');
-  const mode = storedMode ? JSON.parse(storedMode) : 'light';
+  const [skill, setSkill] = useState(skills[0]);
 
   useEffect(() => {
+    let [i, complete, skillIdx] = [0, false, 0];
+    const updateSkill = setInterval(_ => {
+      setSkill(skills[skillIdx]);
+      skillIdx < skills.length - 1 ? skillIdx++ : (skillIdx = 0);
+    }, 1000);
     const str = 'Hello, my name is Reeann.';
-    let i = 0;
-    let complete = false;
     const typeWriter = () => {
       if (i < str.length && !complete) {
         setIntro((txt: string) => txt + str.charAt(i));
@@ -27,20 +28,19 @@ const Homepage = () => {
       setTimeout(_ => setIntro((txt: string) => txt + '.'), 100);
     };
     setTimeout(() => typeWriter(), 1000);
+    return () => clearInterval(updateSkill);
   }, []);
 
   return (
     <div className="homepageContainer">
       <div className="introduction">
-        <h1 className={`name ${mode}`}>{intro}&nbsp;</h1>
-        <h3 className={`tagline ${mode}`}>I&apos;m a frontend developer based in Miami, FL.</h3>
-        <h3 className={`tagline ${mode}`}>I like building simple experiences for complex problems.</h3>
+        <h1 className="name">{intro}&nbsp;</h1>
+        <h3 className="tagline">I&apos;m a frontend developer based in Miami, FL.</h3>
+        <h3 className="tagline">I like building simple experiences for complex problems.</h3>
+        <h3 className="tagline">
+          I have fun with <span className="text">{skill}.</span>
+        </h3>
       </div>
-      {/* <div className="skillsCloud">
-        {skills.map((skill, idx) => (
-          <FloatingText key={skill} text={skill} idx={idx} />
-        ))}
-      </div> */}
     </div>
   );
 };

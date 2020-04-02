@@ -27,14 +27,13 @@ export const links = [
 ];
 
 export const skills = [
-  'git',
   'react',
   'javascript',
   'responsive design',
-  'ruby',
   'graphql',
+  'css-in-js',
   'typescript',
-  'firestore',
+  'cloud firestore',
   'es6',
   'sass',
   'css',
@@ -52,18 +51,18 @@ export const projects = [
     description: 'Next-generation cloud-based EHR/practice management software.',
     url: 'https://www.carecloud.com/go/',
     image: go,
-    highlights: 'Micro-frontend architecture, drag and drop views, realtime collaboration.',
+    highlights: 'Micro-frontend architecture, drag and drop views, realtime collab., context, hooks.',
   },
   {
     name: 'Breeze',
     description: 'An award-winning patient intake and registration app with 20k+ users.',
     url: 'https://www.carecloud.com/breeze/',
     image: breeze,
-    highlights: 'Migrated app from angular in 3.5 months with small team using React/Redux',
+    highlights: 'Migrated from Angular to React with Redux state management in three months.',
   },
   {
     name: 'Component Library',
-    description: 'In-house React component library with 20+ reusable components.',
+    description: 'React component library built on Storybook with 20+ reusable components.',
     url: 'https://storybook.js.org/',
     image: storybook,
     highlights: 'Complete with smooth animations, accessibility, unit tests and without material-ui. ',

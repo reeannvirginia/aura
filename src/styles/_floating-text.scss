@@ -1,12 +1,11 @@
 .text {
-  background-image: linear-gradient(to right, #b393b3, #d8d8c3, #695a73);
   background-clip: text;
   font-weight: 700;
-  font-family: 'Bellota Text', cursive;
-  opacity: 0;
   -webkit-background-clip: text;
   color: transparent;
-  mix-blend-mode: luminosity;
+  @include themed() {
+    background-image: t('rainbowText');
+  }
 }
 .orange {
   font-size: 32px;

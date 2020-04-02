@@ -32,6 +32,9 @@ body {
     & svg {
       font-size: 100%;
     }
+    & span {
+      font-size: 90%;
+    }
   }
   @media (max-width: $small) {
     & h1 {
@@ -46,21 +49,10 @@ body {
     & p {
       font-size: 80%;
     }
+    & span {
+      font-size: 80%;
+    }
   }
-}
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  height: 0;
-  width: 0;
-}
-
-::-webkit-scrollbar-track {
-  height: 0;
-  width: 0;
 }
 
 .App {
