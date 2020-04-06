@@ -1,29 +1,29 @@
 @import 'themes';
 @import 'components';
-@import 'floating-text';
 @import 'toggle';
-@import 'homepage';
 @import 'about';
 @import 'work';
-@import 'contact';
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  & h1 {
-    font-size: 400%;
-  }
   & h2 {
+    font-weight: 500;
+    line-height: 1.8;
     margin-block-end: 0px;
     margin-block-start: 0px;
+    letter-spacing: 1px;
   }
   & h3 {
-    line-height: 2;
     margin-block-end: 0px;
     margin-block-start: 0px;
+    letter-spacing: 1px;
+  }
+  & p {
+    line-height: 2;
+    text-align: justify;
   }
   @media (max-width: $large) {
     & h1 {
@@ -40,16 +40,10 @@ body {
     & h1 {
       font-size: 200%;
     }
-    & h2 {
-      font-size: 110%;
-    }
     & h3 {
       font-size: 80%;
     }
     & p {
-      font-size: 80%;
-    }
-    & span {
       font-size: 80%;
     }
   }
@@ -58,7 +52,6 @@ body {
 .App {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 .darkModeToggle {
   position: absolute;
@@ -66,36 +59,28 @@ body {
   right: 0;
 }
 .contentContainer {
-  height: inherit;
+  height: calc(100% - 60px);
   position: relative;
   transition: all 0.3s;
   display: flex;
   justify-content: center;
+  overflow: auto;
   @include themed() {
     background: t('bg');
   }
 }
 .content {
   display: grid;
-  grid-template-rows: 20% auto;
-  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 75px;
   width: 84%;
-  height: calc(100% - 100px);
-  overflow: scroll;
-}
-.headline {
-  align-self: flex-end;
-  font-family: $fontSecondary;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
-  font-weight: 800;
-  animation: typing 3.5s ease;
-  @include themed() {
-    color: t('font');
+  max-width: 1200px;
+  @media (max-width: $medium) {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
   }
 }
-
 @keyframes typing {
   from {
     opacity: 0;

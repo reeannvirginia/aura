@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Project } from '../components';
 import { projects } from '../utils/constants';
 
 interface Project {
@@ -11,17 +12,23 @@ interface Project {
 }
 
 const Work = () => {
+  const [activeProject, setActive] = useState<string | null>(null);
+
   return (
     <div className="workContainer">
-      {projects.map(({ name, description, image, highlights, url }: Project) => (
-        <a key={name} className="projectContainer" href={url} target="_blank" rel="noopener noreferrer">
-          <img src={image} alt={name} />
-          <div className="projectDescription">
-            <span className="description">{name}</span>
-            <span className="description">{description}</span>
-            <span className="description">{highlights}</span>
-          </div>
-        </a>
+      {activeProject && (
+        <div className="close" onClick={() => setActive(null)}>
+          <i className="fas fa-times" />
+        </div>
+      )}
+      {projects.map((project: Project) => (
+        <Project
+          key={project.name}
+          setActive={setActive}
+          project={project}
+          isActive={activeProject === project.name}
+          isHidden={activeProject && activeProject !== project.name}
+        />
       ))}
     </div>
   );

@@ -15,30 +15,37 @@ $lightText: rgb(180, 132, 132);
 $dark: black;
 $neonTextColor: #02a6f2;
 $fontFamily: 'Bellota Text', cursive;
-$fontSecondary: 'Montserrat', sans-serif;
 $darkAccent: #8e8888;
 $lightAccent: #e8d7d7;
+$boxShadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.6);
+$rainbowFont: linear-gradient(to right, rgba(163, 122, 193, 1), rgba(191, 113, 178, 1), rgba(169, 122, 122, 1));
+$rainbowGradient: linear-gradient(
+  to right,
+  rgba(163, 122, 193, 0.8),
+  rgba(191, 113, 178, 0.8),
+  rgba(169, 122, 122, 0.8)
+);
 
 // themes
 $themes: (
   light: (
-    rainbowText: linear-gradient(to right, $dark, #6f3894, #b9b95c),
     bg: $light,
     sidebar: $dark,
     nav: $lightAccent,
+    bubble: rgba(0, 0, 0, 0.4),
     sidebarFont: $light,
     font: $dark,
     gradient: linear-gradient(to right, rgba(224, 210, 210, 0.9), rgba(224, 210, 210, 0.65)),
     navLink: grey,
-    boxShadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.4),
+    boxShadow: $boxShadow,
     boxShadowEnhanced: 0px 2px 8px 0px rgba(0, 0, 0, 0.4),
   ),
   dark: (
-    rainbowText: linear-gradient(to right, $light, #b9b95c, #6f3894),
     bg: $dark,
     sidebar: $light,
     nav: $darkAccent,
     sidebarFont: $dark,
+    bubble: rgba(255, 255, 255, 0.4),
     font: $light,
     gradient: linear-gradient(to right, rgba(142, 136, 136, 0.9), rgba(142, 136, 136, 0.65)),
     floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
