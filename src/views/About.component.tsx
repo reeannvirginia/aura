@@ -18,13 +18,12 @@ const About = () => {
 
   return (
     <div className="aboutContainer">
-      <div className="aboutHeader">
-        <h2>Reeann Hansen</h2>
-        <h2>Miami, FL</h2>
+      <div className="header">
+        <h2>about</h2>
       </div>
       <div className="aboutDescription">
         <p>
-          I&apos;m a front end developer with 2+ years programming experience specializing in{' '}
+          Hi, my name is Reeann. I&apos;m a front end developer with 2+ years programming experience specializing in{' '}
           <span className="text">React</span> and pixel-perfect <span className="text">CSS</span>. I&apos;m excited by
           subtle animations, conversations about design and delivering an intuitive user experience in a complex
           workflow.

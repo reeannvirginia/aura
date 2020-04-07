@@ -1,22 +1,20 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s;
-  margin: auto 0;
+  height: 550px;
   @include themed() {
     color: t('font');
   }
 }
-
-.aboutHeader {
-  height: 100px;
+.header {
+  height: 50px;
   position: relative;
   &::after {
     content: '';
     display: block;
     position: absolute;
     bottom: 0;
-    width: 60px;
+    width: 34px;
     @include themed() {
       border-bottom: 3px solid t('font');
     }

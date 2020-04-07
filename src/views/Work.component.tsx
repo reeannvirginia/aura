@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 import { Project } from '../components';
 import { projects } from '../utils/constants';
 
@@ -16,20 +17,23 @@ const Work = () => {
 
   return (
     <div className="workContainer">
-      {activeProject && (
-        <div className="close" onClick={() => setActive(null)}>
+      <div className="header">
+        <h2>projects</h2>
+      </div>
+      <div className="workDescription">
+        <div className={classNames('close', { showClose: activeProject })} onClick={() => setActive(null)}>
           <i className="fas fa-times" />
         </div>
-      )}
-      {projects.map((project: Project) => (
-        <Project
-          key={project.name}
-          setActive={setActive}
-          project={project}
-          isActive={activeProject === project.name}
-          isHidden={activeProject && activeProject !== project.name}
-        />
-      ))}
+        {projects.map((project: Project) => (
+          <Project
+            key={project.name}
+            setActive={setActive}
+            project={project}
+            isActive={activeProject === project.name}
+            isHidden={activeProject && activeProject !== project.name}
+          />
+        ))}
+      </div>
     </div>
   );
 };

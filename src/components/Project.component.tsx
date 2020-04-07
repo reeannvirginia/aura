@@ -18,13 +18,12 @@ export interface Project {
 }
 
 const Project = ({ project, setActive, isActive, isHidden }: Project) => {
-  const background = `url(${window.location.origin + '/' + project.image}) top`;
   return (
     <div
-      style={{ background }}
       className={classNames('projectBubble', { projectContainer: isActive, isHidden })}
       onClick={isActive ? undefined : () => setActive(project.name)}
     >
+      <img src={project.image} alt={project.name} />
       <div className={classNames('projectDescription', { isActive })}>
         <h3 className="projectTitle">{project.name}</h3>
         <div className="details">
