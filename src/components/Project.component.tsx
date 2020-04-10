@@ -1,41 +1,48 @@
-import React, { SetStateAction, Dispatch } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import classNames from 'classnames';
+import { ProjectProps } from '../utils/types';
 
-interface ActiveProject {
-  name: string;
-  description: string;
-  image: string;
-  url: string;
-  highlights: string;
-  role?: string;
-}
+const Project = ({ project, setActive, isActive, isHidden, fullView }: ProjectProps) => {
+  const [hidden, setHidden] = useState(false);
 
-export interface Project {
-  isActive: boolean;
-  isHidden: boolean | null | '';
-  project: ActiveProject;
-  setActive: Dispatch<SetStateAction<string | null>>;
-}
+  const handleClick = () => setActive(project.name);
 
-const Project = ({ project, setActive, isActive, isHidden }: Project) => {
+  const handleClose = (e: MouseEvent) => {
+    e.stopPropagation();
+    setActive(null);
+    setHidden(true);
+    setTimeout(() => {
+      setHidden(false);
+    }, 600);
+  };
+
   return (
     <div
-      className={classNames('projectBubble', { projectContainer: isActive, isHidden })}
-      onClick={isActive ? undefined : () => setActive(project.name)}
+      className={classNames('projectSquare', {
+        activeProject: isActive && fullView,
+        removed: fullView && !isActive && !hidden,
+        hidden: (isHidden && !fullView) || hidden,
+        disabled: !project.url,
+      })}
+      onClick={handleClick}
     >
-      <img src={project.image} alt={project.name} />
-      <div className={classNames('projectDescription', { isActive })}>
-        <h3 className="projectTitle">{project.name}</h3>
-        <div className="details">
-          <span className="description">{project.description}</span>
-          <span className="description">{project.highlights}</span>
+      <div className="close" onClick={handleClose}>
+        <i className="fas fa-times" />
+      </div>
+      {project.image && <img src={project.image} alt={project.name} />}
+      <h3 className="projectTitle">{project.name}</h3>
+      <div className="details">
+        <h3 className="description">{project.name}</h3>
+        <span className="description">{project.description}</span>
+        <span className="description">{project.highlights}</span>
+        {project.url && (
           <a href={project.url} target="_blank" rel="noopener noreferrer">
             Learn more
           </a>
-        </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Project;
+export default React.memo(Project);

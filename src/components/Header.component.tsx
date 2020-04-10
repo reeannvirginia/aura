@@ -1,11 +1,6 @@
 import React from 'react';
 import { links } from '../utils/constants';
-
-export interface NavItem {
-  display: string;
-  icon: string;
-  url: string;
-}
+import { NavItem } from '../utils/types';
 
 const Header = () => {
   return (

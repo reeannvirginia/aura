@@ -1,10 +1,4 @@
 import { go, breeze, storybook } from '../assets';
-export const pages = [
-  { display: 'home', icon: 'home', url: '/' },
-  { display: 'about', icon: 'user-female', url: '/about' },
-  { display: 'work', icon: 'laptop', url: '/work' },
-  { display: 'contact', icon: 'ringing-phone', url: '/contact' },
-];
 
 export const links = [
   {
@@ -29,7 +23,6 @@ export const skills = [
   'responsive design',
   'graphql',
   'css-in-js',
-  'typescript',
   'cloud firestore',
   'es6',
   'express',
@@ -38,6 +31,15 @@ export const skills = [
   'react-router',
   'jest',
   'enzyme',
+];
+
+export const skillIcons = [
+  'javascript-plain',
+  'react-original',
+  'typescript-plain',
+  'html5-plain',
+  'css3-plain',
+  'sass-original',
 ];
 
 export const projects = [
@@ -62,5 +64,13 @@ export const projects = [
     url: 'https://storybook.js.org/',
     image: storybook,
     highlights: 'Complete with smooth animations, accessibility, unit tests and without material-ui. ',
+  },
+  {
+    name: 'Coming soon',
+    description: 'Coming soon',
+  },
+  {
+    name: "Let's work together!",
+    description: 'Coming soon',
   },
 ];

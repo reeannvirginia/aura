@@ -50,7 +50,7 @@ body {
 }
 
 .App {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   transition: all 0.4s;
   &.theme-dark {
@@ -65,17 +65,16 @@ body {
 .contentContainer {
   display: flex;
   justify-content: center;
-  overflow: auto;
   width: 90vw;
   margin: 0 auto;
 }
 .content {
-  height: calc(100vh - 60px);
+  // height: calc(100vh - 60px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 75px;
   max-width: 1200px;
-  align-items: center;
+  padding-top: 100px;
   @media (max-width: $medium) {
     height: unset;
     display: flex;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { skills } from '../utils/constants';
+import { skills, skillIcons } from '../utils/constants';
 
 const About = () => {
   const [skill, setSkill] = useState(skills[0]);
@@ -30,17 +30,14 @@ const About = () => {
         </p>
         <p>
           Recently, my professional experience has involved more interaction and participation with product managers and
-          designers to understand clients&apos; problems and provide features that help simplify their workday.
+          designers to understand clients&apos; problems and deliver features that help simplify their workday.
         </p>
         <p>I maintain balance with exercise, travel, reading and working towards my goal of owning a dog [or two].</p>
         <h3>Skills</h3>
         <div className="skillIcons">
-          <i className="devicon-javascript-plain" />
-          <i className="devicon-react-original" />
-          <i className="devicon-typescript-plain" />
-          <i className="devicon-html5-plain" />
-          <i className="devicon-css3-plain" />
-          <i className="devicon-sass-original" />
+          {skillIcons.map(skill => (
+            <i key={skill} className={`devicon-${skill}`} />
+          ))}
         </div>
         <p>
           But I also have fun with <span className="text">{skill}.</span>

@@ -1,8 +1,6 @@
 .workContainer {
   display: flex;
   flex-direction: column;
-  height: 550px;
-  width: 100%;
   @include themed() {
     color: t('font');
   }
@@ -12,142 +10,129 @@
   }
 }
 .workDescription {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
+  padding-top: 16px;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  transition: all 1s ease;
 }
-.projectBubble {
+.projectSquare {
   display: flex;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  min-height: 100px;
-  border-radius: 4px;
-  width: 200px;
+  min-height: 150px;
   position: relative;
   outline: none;
+  animation: growIn 0.6s ease-out;
   transition: all 0.5s;
-  margin-bottom: 16px;
   & img {
-    transition: all 0.5s;
+    margin: 12px 0;
     width: 100%;
-    opacity: 0.4;
+    image-rendering: -webkit-optimize-contrast;
   }
   @include themed() {
     box-shadow: t('boxShadow');
   }
   &:hover {
-    transform: scale(1.03);
-    @include themed() {
-      box-shadow: t('boxShadowEnhanced');
+    & .projectTitle {
+      opacity: 1;
     }
   }
 }
-.projectContainer {
-  width: 100%;
-  overflow: hidden;
-  box-shadow: $boxShadow;
-  cursor: default;
-  text-decoration: none;
-  min-height: 250px;
-  & img {
-    opacity: 1;
-  }
-  & a {
-    width: fit-content;
-    align-self: flex-end;
-    color: white;
-    line-height: 2;
-    font-weight: 700;
-  }
-  &:hover {
-    transform: scale(1);
-    @include themed() {
-      box-shadow: t('boxShadowEnhanced');
-    }
-  }
-}
-.isHidden {
-  opacity: 0;
-  width: 0px;
-  min-height: 0px;
-  margin: 0px !important;
-}
-.projectDescription {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 18px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.6s ease-out;
-  @include themed() {
-    background: $rainbowGradient;
-    color: t('sidebarFont');
-  }
-}
-.details {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transition: opacity 2s;
-  & span {
-    margin-block-start: 1em;
-  }
-}
-.projectTitle {
-  width: 100%;
-  text-align: center;
-  transition: width 0.5s;
-  white-space: nowrap;
-  font-size: 20px;
-}
-.isActive {
-  & .projectTitle {
-    width: 50px;
-  }
-  & .details {
-    display: flex;
-    height: fit-content;
-    opacity: 1;
-    flex-direction: column;
-  }
-}
-
-.close {
-  opacity: 0;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 50%;
-  width: fit-content;
-  margin-left: auto;
-  margin-bottom: 16px;
-  transform: scale(0);
-  @include themed() {
-    color: t('font');
-    background: t('bg');
-    box-shadow: t('boxShadowEnhanced');
-  }
-}
-.showClose {
-  opacity: 1;
-  transform: scale(1);
-  animation: fadeIn 0.5s ease-out;
-}
-@keyframes fadeIn {
-  0%,
-  50% {
+@keyframes growIn {
+  from {
     opacity: 0;
     transform: scale(0);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
   }
+}
+.disabled {
+  pointer-events: none;
+  & .projectTitle {
+    opacity: 1;
+    @include themed() {
+      background: t('disabled');
+    }
+  }
+}
+.projectTitle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  background: $rainbowGradient;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include themed() {
+    color: t('sidebarFont');
+  }
+}
+.activeProject {
+  cursor: default;
+  &:hover .projectTitle {
+    opacity: 0;
+  }
+  & .details {
+    background: $rainbowGradient;
+    font-weight: 500;
+    font-size: 18px;
+    flex-direction: column;
+    padding: 16px;
+    display: flex;
+    max-height: 200px;
+    opacity: 1;
+    animation: expand 0.8s ease-out;
+  }
+  & .close {
+    opacity: 1;
+  }
+}
+.hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+.removed {
+  display: none;
+}
+.hideProject {
+  transform: scale(0);
+  transition: transform 0.6s;
+}
+
+.details {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease-out;
+  background: rgba(64, 64, 64, 0.25);
+  & a {
+    align-self: flex-end;
+    color: white;
+    z-index: 100;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .description {
+    margin-bottom: 16px;
+  }
+  @include themed() {
+    color: t('sidebarFont');
+  }
+}
+.close {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  z-index: 100;
+  color: rgba(64, 64, 64, 0.4);
 }

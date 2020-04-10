@@ -1,12 +1,8 @@
-import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import React, { ChangeEvent } from 'react';
 import { dark, light } from '../assets';
-export interface Props {
-  darkMode: string;
-  onChange: Dispatch<SetStateAction<string>>;
-  className: string;
-}
+import { ToggleProps } from '../utils/types';
 
-const Toggle = ({ darkMode, onChange, className }: Props) => {
+const Toggle = ({ darkMode, onChange, className }: ToggleProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value === 'light' ? 'dark' : 'light');
   };
