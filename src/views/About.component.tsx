@@ -18,9 +18,9 @@ const About = () => {
 
   return (
     <div className="aboutContainer">
-      <div className="header">
+      {/* <div className="header">
         <h2>about</h2>
-      </div>
+      </div> */}
       <div className="aboutDescription">
         <p>
           Hi, my name is Reeann. I&apos;m a front end developer with 2+ years programming experience specializing in{' '}

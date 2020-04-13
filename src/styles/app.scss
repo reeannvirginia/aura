@@ -53,6 +53,9 @@ body {
   height: 100%;
   width: 100vw;
   transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   &.theme-dark {
     background: $dark;
   }
@@ -60,25 +63,43 @@ body {
 .darkModeToggle {
   position: absolute;
   top: 70px;
-  right: 6px;
-}
-.contentContainer {
-  display: flex;
-  justify-content: center;
-  width: 90vw;
-  margin: 0 auto;
+  right: 4px;
 }
 .content {
-  // height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  margin: auto;
+  width: 90vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 75px;
+  grid-template-rows: 20% auto;
+  grid-gap: 25px 75px;
   max-width: 1200px;
-  padding-top: 100px;
+  grid-auto-flow: column;
   @media (max-width: $medium) {
-    height: unset;
+    height: 100%;
     display: flex;
     padding: 24px;
     flex-direction: column;
+    & .header {
+      align-self: flex-start;
+    }
+  }
+}
+.header {
+  height: 50px;
+  position: relative;
+  align-self: flex-end;
+  @include themed() {
+    color: t('font');
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 34px;
+    @include themed() {
+      border-bottom: 3px solid t('font');
+    }
   }
 }

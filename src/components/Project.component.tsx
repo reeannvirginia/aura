@@ -13,13 +13,13 @@ const Project = ({ project, setActive, isActive, isHidden, fullView }: ProjectPr
     setHidden(true);
     setTimeout(() => {
       setHidden(false);
-    }, 600);
+    }, 500);
   };
 
   return (
     <div
       className={classNames('projectSquare', {
-        activeProject: isActive && fullView,
+        activeProject: (isActive && fullView) || hidden,
         removed: fullView && !isActive && !hidden,
         hidden: (isHidden && !fullView) || hidden,
         disabled: !project.url,

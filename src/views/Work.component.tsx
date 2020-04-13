@@ -16,9 +16,6 @@ const Work = () => {
 
   return (
     <div className="workContainer">
-      <div className="header">
-        <h2>projects</h2>
-      </div>
       <div id="work" className="workDescription">
         {projects.map((project: Project) => (
           <ProjectComponent

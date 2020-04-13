@@ -11,11 +11,13 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "beautiful-react-hooks": "^0.23.1",
     "classnames": "^2.2.6",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "react-pdf": "^4.1.0",
     "react-scripts": "3.4.0",
+    "ree-hooks": "^0.1.2",
     "typescript": "~3.7.2"
   },
   "scripts": {

@@ -1,23 +1,8 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  // min-height: 550px;
   @include themed() {
     color: t('font');
-  }
-}
-.header {
-  height: 50px;
-  position: relative;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 34px;
-    @include themed() {
-      border-bottom: 3px solid t('font');
-    }
   }
 }
 .skillIcons {
