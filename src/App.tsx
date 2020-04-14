@@ -1,7 +1,6 @@
 import React from 'react';
 import { usePersistingTheme } from 'ree-hooks';
-import { Header, Toggle } from './components/index';
-import { About, Work } from './views';
+import { Header, Toggle, About, Work } from './components';
 
 const App = () => {
   const [value, setValue] = usePersistingTheme();

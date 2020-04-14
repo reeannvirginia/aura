@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Project as ProjectComponent } from '../components';
+import { Project as ProjectComponent } from '.';
 import { projects } from '../utils/constants';
 import { Project } from '../utils/types';
 
