@@ -1,8 +1,10 @@
 //sizes
 $xSmall: 350px;
-$small: 430px;
-$medium: 900px;
-$large: 1024px;
+$small: 464px;
+$medium: 770px;
+$large: 1200px;
+
+$ipad: 1000px;
 
 // font-sizes
 $xSmallPadding: 16px;
@@ -11,44 +13,30 @@ $xSmallText: 10px;
 
 // other colors
 $light: white;
-$lightText: rgb(180, 132, 132);
 $dark: black;
-$neonTextColor: #02a6f2;
-$fontFamily: 'Bellota Text', cursive;
-$darkAccent: #8e8888;
-$lightAccent: #e8d7d7;
+$secondaryFont: 'Antic Didone', serif;
 $boxShadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
-$rainbowFont: linear-gradient(to right, rgba(66, 82, 197, 1), rgba(76, 100, 216, 1), rgba(72, 120, 154, 1));
-$rainbowGradient: linear-gradient(to right, rgba(66, 82, 197, 0.7), rgba(76, 100, 216, 0.7), rgba(72, 120, 154, 0.7));
+$rainbowFont: pink;
 
 // themes
 $themes: (
-  light: (
-    bg: $light,
-    sidebar: $dark,
-    nav: $lightAccent,
-    bubble: rgba(0, 0, 0, 0.4),
-    sidebarFont: $light,
-    font: $dark,
-    gradient: linear-gradient(to right, rgba(224, 210, 210, 0.9), rgba(224, 210, 210, 0.65)),
-    navLink: grey,
-    boxShadow: $boxShadow,
-    boxShadowEnhanced: 0px 2px 8px 0px rgba(0, 0, 0, 0.4),
-    disabled: rgba(64, 64, 64, 0.25),
+  electric: (
+    bg: #d7fff3,
+    accent: #8000ff,
+    accentShadow: #eeddff,
+    text: $dark,
+    accentText: $light,
   ),
-  dark: (
-    bg: $dark,
-    sidebar: $light,
-    nav: $darkAccent,
-    sidebarFont: $dark,
-    bubble: rgba(255, 255, 255, 0.4),
-    font: $light,
-    gradient: linear-gradient(to right, rgba(142, 136, 136, 0.9), rgba(142, 136, 136, 0.65)),
-    floatingText: linear-gradient(to right, #b393b3, #d8d8c3, #695a73),
-    navLink: $light,
-    boxShadow: 0px 0px 5px 0px rgb(128, 121, 121),
-    boxShadowEnhanced: 0px 0px 10px 1px rgb(128, 121, 121),
-    disabled: $lightAccent,
+  deco: (
+    // bg: #e9c46a,
+      bg: #f6d97b,
+    // bg: #215352,
+      accent: #e76f51,
+    accentShadow: #f4a261,
+    text: #2a9d8f,
+    // text: #215352,
+      // text: #e9c46a,
+      accentText: $light,
   ),
 );
 

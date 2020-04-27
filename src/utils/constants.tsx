@@ -1,4 +1,23 @@
-import { go, breeze, storybook } from '../assets';
+import { go, breeze, react } from '../assets';
+
+export const responsive = {
+  largeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 export const links = [
   {
@@ -19,58 +38,67 @@ export const links = [
   },
 ];
 
-export const skills = [
-  'responsive design',
-  'graphql',
-  'css-in-js',
-  'cloud firestore',
-  'es6',
-  'express',
-  'apollo client',
-  'realtime database',
-  'react-router',
-  'jest',
-  'enzyme',
+export const navItems = [
+  { display: 'ABOUT' },
+  { display: 'EXPERIENCE' },
+  { display: 'PROJECTS' },
+  { display: 'CONTACT' },
 ];
 
-export const skillIcons = [
-  'javascript-plain',
-  'react-original',
-  'typescript-plain',
-  'html5-plain',
-  'css3-plain',
-  'sass-original',
+export const skills = [
+  { display: 'JavaScript', level: 3 },
+  { display: 'React', level: 3 },
+  { display: 'TypeScript', level: 2 },
+  { display: 'HTML5', level: 3 },
+  { display: 'CSS3 & SCSS', level: 3 },
+  { display: 'Responsive Design', level: 2 },
+  { display: 'GraphQL', level: 3 },
+  { display: 'TDD', level: 2 },
+  { display: 'Adobe XD', level: 1 },
+];
+
+export const work = [
+  {
+    title: 'Software Engineer II',
+    display: 'CareCloud',
+    location: 'Miami, FL',
+    time: 'Jan 2018 - Mar 2020',
+    role: 'UI lead for EHR feature development',
+    projects: 'Projects: Go, Breeze',
+  },
+  {
+    title: 'Client Service Executive',
+    display: 'PHD Media',
+    location: 'Frankfurt, Germany',
+    time: 'Sept 2015 - Sept 2017',
+    role: 'Digital strategist for EMEA region',
+    projects: 'Clients: SAP, Universal Studios, Starbucks',
+  },
 ];
 
 export const projects = [
   {
     name: 'CareCloud Go',
-    description: 'Next-generation cloud-based EHR/practice management software.',
+    description:
+      'Next-generation cloud-based Practice Management/EHR app with micro-frontend architecture with drag an drop views, realtime collaboration.',
     url: 'https://www.carecloud.com/go/',
     image: go,
-    highlights:
-      'Micro-frontend architecture, drag and drop views, realtime collab., React Context for state management',
+    highlights: 'JavaScript/React, GraphQL, SCSS, Firebase, React JSON Schema, Single-Spa, JSS, React-Router',
   },
   {
     name: 'Breeze',
-    description: 'An award-winning patient intake and registration app with 20k+ users.',
+    description:
+      'An award-winning patient intake and registration app with 20k+ users. Migrated from Angular to React in 3 months with a small, but awesome team.',
     url: 'https://www.carecloud.com/breeze/',
     image: breeze,
-    highlights: 'Migrated UI from Angular to React with Redux state management within a tight 3-month deadline.',
+    highlights: 'React, Redux, JSS',
   },
   {
     name: 'Component Library',
-    description: 'React component library built on Storybook with 20+ reusable components.',
+    description:
+      'An in-house component library housing 20+ reusable components completed with smooth animations, accessibility, unit test and without material-ui.',
     url: 'https://storybook.js.org/',
-    image: storybook,
-    highlights: 'Complete with smooth animations, accessibility, unit tests and without material-ui. ',
-  },
-  {
-    name: 'Coming soon',
-    description: 'Coming soon',
-  },
-  {
-    name: "Let's work together!",
-    description: 'Coming soon',
+    image: react,
+    highlights: 'React, TypeScript, SCSS, JSS, pdfJS, Jest, Enzyme',
   },
 ];

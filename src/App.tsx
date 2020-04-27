@@ -1,23 +1,19 @@
-import React from 'react';
-import { usePersistingTheme } from 'ree-hooks';
-import { Header, Toggle, About, Work } from './components';
+import React, { useEffect } from 'react';
+import { Intro, About, Projects, Skills, Footer } from './components';
 
 const App = () => {
-  const [value, setValue] = usePersistingTheme();
+  useEffect(() => {
+    if (window.location.pathname !== '/') {
+      window.location.replace('/');
+    }
+  }, []);
   return (
-    <div className={`App theme-${value}`}>
-      <Header />
-      <Toggle className="darkModeToggle" darkMode={value} onChange={setValue} />
-      <div className="content">
-        <div className="header">
-          <h2>about</h2>
-        </div>
-        <About />
-        <div className="header">
-          <h2>projects</h2>
-        </div>
-        <Work />
-      </div>
+    <div className={`App theme-deco`}>
+      <Intro />
+      <About />
+      <Skills />
+      <Projects />
+      <Footer />
     </div>
   );
 };

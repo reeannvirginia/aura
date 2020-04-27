@@ -1,5 +1,5 @@
-export { default as Header } from './Header.component';
-export { default as Toggle } from './Toggle.component';
-export { default as Project } from './Project.component';
-export { default as About } from '../components/About.component';
-export { default as Work } from '../components/Work.component';
+export { default as Footer } from './Footer.component';
+export { default as About } from './About.component';
+export { default as Projects } from './Projects.component';
+export { default as Intro } from './Intro.component';
+export { default as Skills } from './Skills.component';

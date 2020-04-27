@@ -1,135 +1,38 @@
-.workContainer {
-  display: flex;
-  flex-direction: column;
+.projectContainer {
+  @extend .container;
+  height: fit-content;
   @include themed() {
-    color: t('font');
+    color: t('text');
   }
 }
-.workDescription {
-  padding-top: 16px;
+.projectWrapper {
+  @extend .contentBoundary;
   display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  transition: all 1s ease;
-}
-.projectSquare {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  overflow: hidden;
-  min-height: 150px;
-  position: relative;
-  outline: none;
-  animation: growIn 0.6s ease-out;
-  transition: all 0.5s;
-  background: $light;
-  & img {
-    margin: 12px 0;
-    width: 100%;
-    image-rendering: -webkit-optimize-contrast;
-  }
-  @include themed() {
-    box-shadow: t('boxShadow');
-  }
-  &:hover {
-    & .projectTitle {
-      opacity: 1;
-    }
-  }
-}
-@keyframes growIn {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.disabled {
-  pointer-events: none;
-  & .projectTitle {
-    opacity: 1;
+  padding-bottom: 70px;
+  grid-template-rows: 120px repeat(2, minmax(450px, 1fr));
+  grid-template-columns: 40% 50%;
+  grid-gap: 40px 70px;
+  & a {
     @include themed() {
-      background: t('disabled');
+      font-weight: bold;
+      color: t('accent');
     }
+  }
+  @media (max-width: $small) {
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+  }
+}
+.projectImage {
+  max-width: 100%;
+  max-height: 400px;
+  @include themed() {
+    filter: drop-shadow(30px 30px 0px t('accentShadow'));
   }
 }
 .projectTitle {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-  background: $rainbowGradient;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  @include themed() {
-    color: t('sidebarFont');
-  }
+  font-weight: bold;
 }
-.activeProject {
-  cursor: default;
-  &:hover .projectTitle {
-    opacity: 0;
-  }
-  & .details {
-    background: $rainbowGradient;
-    font-weight: 500;
-    font-size: 18px;
-    flex-direction: column;
-    padding: 16px;
-    display: flex;
-    max-height: 200px;
-    opacity: 1;
-    animation: expand 0.8s ease-out;
-  }
-  & .close {
-    opacity: 1;
-  }
-}
-.hidden {
-  opacity: 0;
-  transform: scale(0);
-}
-.removed {
-  display: none;
-}
-.hideProject {
-  transform: scale(0);
-  transition: transform 0.6s;
-}
-
 .details {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease-out;
-  background: rgba(64, 64, 64, 0.25);
-  & a {
-    align-self: flex-end;
-    color: white;
-    z-index: 100;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .description {
-    margin-bottom: 16px;
-  }
-  @include themed() {
-    color: t('sidebarFont');
-  }
-}
-.close {
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  right: 8px;
-  top: 4px;
-  z-index: 100;
-  color: rgba(64, 64, 64, 0.4);
+  align-self: center;
 }
