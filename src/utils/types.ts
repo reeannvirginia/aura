@@ -19,8 +19,8 @@ export interface ProjectProps {
 
 export interface NavItem {
   display: string;
-  icon: string;
-  url: string;
+  icon?: string;
+  url?: string;
 }
 
 export interface ToggleProps {

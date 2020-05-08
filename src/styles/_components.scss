@@ -14,11 +14,21 @@
   grid-template-rows: 60px auto;
   grid-gap: 0px 60px;
   align-items: flex-end;
+  & .logo {
+    &:after {
+      content: 'REEANN HANSEN';
+    }
+  }
   @include themed() {
     color: t('accent');
   }
   @media (max-width: $small) {
     grid-template-columns: 1fr;
+    & .logo {
+      &:after {
+        content: 'RH';
+      }
+    }
     & .navItems {
       display: none;
     }
@@ -61,12 +71,9 @@
   }
 }
 .introImg {
-  margin: auto;
   border-radius: 50%;
-  max-width: 100%;
-  @include themed() {
-    filter: drop-shadow(26px 16px 0px t('accentShadow'));
-  }
+  box-shadow: 20px 12px 0px 0px #f4a261;
+  margin: auto;
 }
 
 span.wave {
@@ -103,6 +110,7 @@ span.wave {
 .experienceContainer {
   height: 45vh;
   max-height: 359px;
+
   @include themed() {
     background: t('bg');
   }
@@ -112,6 +120,10 @@ span.wave {
       height: 100%;
     }
   }
+  @media (max-width: $small) {
+    height: fit-content;
+    min-height: 359px;
+  }
 }
 .experienceWrapper {
   @extend .contentBoundary;
@@ -119,8 +131,9 @@ span.wave {
   grid-template-rows: 120px auto;
   grid-template-columns: 1fr;
   margin: auto;
+  height: calc(100% - 30px);
   @media (max-width: $small) {
-    grid-template-rows: auto;
+    grid-template-rows: 60px auto;
   }
 }
 .skillsGrid {
@@ -131,17 +144,26 @@ span.wave {
   grid-auto-flow: column;
   margin: auto 0;
   @media (max-width: $small) {
-    grid-template-rows: repeat(5, 35px);
+    grid-template-columns: auto;
+    grid-gap: 0px 16px;
+    margin: 0;
+    grid-template-rows: repeat(5, minmax(32px, 1fr));
   }
 }
 .skill {
   display: flex;
   justify-content: space-between;
-
   font-size: 0.8em;
+  align-items: center;
+  & h3 {
+    margin-block-start: 0em;
+  }
   @include themed() {
     color: t('text');
   }
+}
+.level {
+  white-space: nowrap;
 }
 .workGrid {
   display: grid;
@@ -194,6 +216,7 @@ span.wave {
   @extend .container;
   height: 30vh;
   max-height: 280px;
+  min-height: 200px;
   @include themed() {
     background: t('accent');
   }

@@ -23,16 +23,6 @@
     grid-template-columns: auto;
   }
 }
-.projectImage {
-  max-width: 100%;
-  max-height: 400px;
-  @include themed() {
-    filter: drop-shadow(30px 30px 0px t('accentShadow'));
-  }
-}
 .projectTitle {
   font-weight: bold;
-}
-.details {
-  align-self: center;
 }

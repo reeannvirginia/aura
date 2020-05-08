@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Intro, About, Projects, Skills, Footer } from './components';
+import { Intro, About, Projects, Experience, Footer } from '.';
 
 const App = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const App = () => {
     <div className={`App theme-deco`}>
       <Intro />
       <About />
-      <Skills />
+      <Experience />
       <Projects />
       <Footer />
     </div>

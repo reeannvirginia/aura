@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavItem } from '../utils/types';
 import { navItems } from '../utils/constants';
 import { intro } from '../assets';
 
@@ -7,20 +8,23 @@ const Intro = () => {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: 'smooth' });
   };
+  const openLink = (url: string) => {
+    window.open(url, '_blank');
+  };
   return (
     <div className="introContainer">
       <div className="introWrapper">
-        <h4>REEANN HANSEN</h4>
+        <h4 className="logo" />
         <div className="navItems">
-          {navItems.map(({ display }) => (
-            <h4 onClick={() => scrollIntoView(display)} key={display}>
+          {navItems.map(({ display, url = '' }: NavItem) => (
+            <h4 key={display} onClick={() => (url ? openLink(url) : scrollIntoView(display))}>
               {display}
             </h4>
           ))}
         </div>
         <div className="greeting">
           <h1>
-            <span className="wave">👋</span> Hey I&apos;m Reeann, front-end developer & aspiring designer.
+            <span className="wave">👋</span> Hey I&apos;m Reeann, front end developer & aspiring designer.
           </h1>
           <h2>I like to build creative, interactive web apps with React & pixel-perfect CSS.</h2>
           <a href="mailto:reeannvirginia@gmail.com">

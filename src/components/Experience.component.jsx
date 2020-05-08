@@ -3,15 +3,11 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { skills, work, responsive } from '../utils/constants';
 
-const Dot = ({ active, onClick }) => {
-  return <div onClick={onClick} className={`dot ${active && 'active'}`} />;
-};
-
 const Skills = () => {
   const levelDisplay = level => {
     let str = '';
     for (let i = 0; i < level; i++) {
-      str += '⭐️';
+      str += '🌶';
     }
     return str;
   };
@@ -21,20 +17,20 @@ const Skills = () => {
       <Carousel showDots customDot={<Dot />} arrows={false} responsive={responsive}>
         <div className="experienceWrapper">
           <div className="header">
-            <h2>skills & strengths</h2>
+            <h2>Skills & Strengths</h2>
           </div>
           <div className="skillsGrid">
             {skills.map(({ display, level }) => (
               <div key={display} className="skill">
                 <h3>{display}</h3>
-                <h3>{levelDisplay(level)}</h3>
+                <h3 className="level">{levelDisplay(level)}</h3>
               </div>
             ))}
           </div>
         </div>
         <div className="experienceWrapper">
           <div className="header">
-            <h2>experience</h2>
+            <h2>Experience</h2>
           </div>
           <div className="workGrid">
             {work.map(({ display, title, role, time, projects }) => (
@@ -61,3 +57,7 @@ const Skills = () => {
 };
 
 export default Skills;
+
+const Dot = ({ active, onClick }) => {
+  return <div onClick={onClick} className={`dot ${active && 'active'}`} />;
+};

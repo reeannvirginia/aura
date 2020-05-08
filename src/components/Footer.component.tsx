@@ -7,7 +7,7 @@ const Footer = () => {
     <div id="CONTACT" className="footer">
       <div className="footerWrapper">
         <div className="footerMesg">
-          <h2>Let's chat!</h2>
+          <h2>Let&apos;s chat!</h2>
         </div>
         <p>
           Drop me a line at <a href="mailto:reeannvirginia@gmail.com">reeannvirginia@gmail.com.</a>

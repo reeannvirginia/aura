@@ -11,18 +11,6 @@
   @media (max-width: $small) {
     grid-template-columns: 1fr;
     grid-template-rows: auto 2fr 4fr;
-    & img {
-      margin: auto;
-      width: 250px;
-    }
-  }
-}
-.profileImg {
-  max-width: 100%;
-  height: auto;
-  align-self: center;
-  @include themed() {
-    filter: drop-shadow(30px 30px 0px t('accentShadow'));
   }
 }
 .aboutDescription {

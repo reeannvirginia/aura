@@ -43,6 +43,7 @@ export const navItems = [
   { display: 'EXPERIENCE' },
   { display: 'PROJECTS' },
   { display: 'CONTACT' },
+  { display: 'RESUME', url: process.env.PUBLIC_URL + '/resume.pdf' },
 ];
 
 export const skills = [
@@ -96,7 +97,7 @@ export const projects = [
   {
     name: 'Component Library',
     description:
-      'An in-house component library housing 20+ reusable components completed with smooth animations, accessibility, unit test and without material-ui.',
+      'A component library housing 20+ reusable components completed with smooth animations, accessibility, unit test and without material-ui.',
     url: 'https://storybook.js.org/',
     image: react,
     highlights: 'React, TypeScript, SCSS, JSS, pdfJS, Jest, Enzyme',

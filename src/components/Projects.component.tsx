@@ -7,12 +7,14 @@ const Projects = () => {
     <div id="PROJECTS" className="projectContainer">
       <div className="projectWrapper">
         <div className="header">
-          <h2>projects</h2>
+          <h2>Projects</h2>
         </div>
         {projects.map((project: Project) => (
           <>
-            <img className="projectImage" src={project.image} alt={project.name} />
-            <div className="details">
+            <div className="image">
+              <img src={project.image} alt={project.name} />
+            </div>
+            <div>
               <h3 className="projectTitle">{project.name}</h3>
               <p className="description">{project.description}</p>
               <p className="description">Tech used: {project.highlights}</p>
