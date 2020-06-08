@@ -1,28 +1,108 @@
-.projectContainer {
+.projectBlockContainer {
   @extend .container;
-  height: fit-content;
+  padding: 4em 0em 10em 0em;
   @include themed() {
+    background: t('tertiary');
     color: t('text');
   }
 }
-.projectWrapper {
-  @extend .contentBoundary;
-  display: grid;
-  padding-bottom: 70px;
-  grid-template-rows: 120px repeat(2, minmax(450px, 1fr));
-  grid-template-columns: 40% 50%;
-  grid-gap: 40px 70px;
+.projectDescription {
+  margin: 100px 0;
+  font-weight: 500;
+  align-self: center;
+  text-align: center;
+  width: 60vw;
   & a {
     @include themed() {
       font-weight: bold;
       color: t('accent');
     }
   }
-  @media (max-width: $small) {
-    grid-template-rows: auto;
-    grid-template-columns: auto;
+}
+
+.projects {
+  margin-top: -18em;
+  z-index: 1;
+  padding: 1.5em;
+  width: 90vw;
+  max-width: 1000px;
+  align-self: center;
+  margin-bottom: 7em;
+}
+.projectsContent {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.project {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  background: white;
+  box-shadow: $boxShadow;
+  overflow: hidden;
+  padding: 2em;
+  display: grid;
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  &:hover {
+    .projectInfo {
+      opacity: 1;
+      transform: scale(1);
+    }
+    img {
+      transform: scale(1.1);
+    }
   }
 }
-.projectTitle {
-  font-weight: bold;
+.projectImage {
+  transition: transform 0.4s;
+  width: 100%;
+  grid-area: 1/1/2/2;
+  border-radius: 10px;
+}
+.projectInfo {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  color: white;
+  padding: 1em;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  align-items: flex-end;
+  box-sizing: border-box;
+  @include themed() {
+    background: rgba(205, 107, 107, 0.9);
+  }
+}
+
+.animateProjects {
+  & .project {
+    animation: growIn 0.8s ease;
+    transform-origin: center;
+  }
+}
+
+.siteLink {
+  @extend .button;
+  margin-left: auto;
+  color: black;
+  width: fit-content;
+  margin-bottom: auto;
+  @include themed() {
+    background: t('tertiary');
+  }
+}
+
+@media (max-width: $medium) {
+  .projectsContent {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }

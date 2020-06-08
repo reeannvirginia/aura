@@ -1,37 +1,45 @@
 import React from 'react';
-import { NavItem } from '../utils/types';
 import { navItems } from '../utils/constants';
-import { intro } from '../assets';
 
 const Intro = () => {
   const scrollIntoView = (id: string) => {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: 'smooth' });
   };
-  const openLink = (url: string) => {
-    window.open(url, '_blank');
-  };
+
+  // const dots = () => {
+  //   return dotTimes.map((t, i) => (
+  //     <span key={String(t)} className="dot" style={{ bottom: `${(i / 14) * 100 + 3}%`, left: i % 2 ? '3%' : '5%' }} />
+  //   ));
+  // };
+
   return (
     <div className="introContainer">
-      <div className="introWrapper">
-        <h4 className="logo" />
-        <div className="navItems">
-          {navItems.map(({ display, url = '' }: NavItem) => (
-            <h4 key={display} onClick={() => (url ? openLink(url) : scrollIntoView(display))}>
-              {display}
-            </h4>
-          ))}
-        </div>
+      <div className="introContent">
+        <header>
+          <div className="logo">RH</div>
+          <div className="navItems">
+            {navItems.map((display) => (
+              <h4 key={display} onClick={() => scrollIntoView(display)}>
+                {display}
+              </h4>
+            ))}
+          </div>
+        </header>
         <div className="greeting">
-          <h1>
-            <span className="wave">👋</span> Hey I&apos;m Reeann, front end developer & aspiring designer.
+          <h1 className="helloMesg">Hello there!</h1>
+          <h1 className="nameMesg">My name is Reeann.</h1>
+          <h1 className="devMesg">
+            I'm a <span>front-end developer</span>
           </h1>
-          <h2>I like to build creative, interactive web apps with React & pixel-perfect CSS.</h2>
-          <a href="mailto:reeannvirginia@gmail.com">
-            <button className="helloButton">SAY HELLO</button>
-          </a>
+          <h1 className="desMesg">
+            & <span>aspiring designer</span>.
+          </h1>
         </div>
-        <img className="introImg" src={intro} alt="intro" />
+        <a className="sayHello" href="mailto:reeannvirginia@gmail.com" target="_blank" rel="noopener noreferrer">
+          SAY HELLO
+        </a>
+        {/* {dots()} */}
       </div>
     </div>
   );

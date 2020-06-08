@@ -1,116 +1,7 @@
-.introContainer {
-  @extend .container;
-  height: 90vh;
-  max-height: 768px;
-  @include themed() {
-    background: t('bg');
-    border-bottom: 5px solid t('accent');
-  }
-}
-.introWrapper {
-  @extend .contentBoundary;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 650px));
-  grid-template-rows: 60px auto;
-  grid-gap: 0px 60px;
-  align-items: flex-end;
-  & .logo {
-    &:after {
-      content: 'REEANN HANSEN';
-    }
-  }
-  @include themed() {
-    color: t('accent');
-  }
-  @media (max-width: $small) {
-    grid-template-columns: 1fr;
-    & .logo {
-      &:after {
-        content: 'RH';
-      }
-    }
-    & .navItems {
-      display: none;
-    }
-    & img {
-      display: none;
-    }
-  }
-}
-.topNav {
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
-  align-items: flex-end;
-}
-.navItems {
-  display: flex;
-  justify-content: space-between;
-  & h4 {
-    cursor: pointer;
-    transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-}
-.greeting {
-  margin: auto;
-  @include themed() {
-    color: t('text');
-  }
-}
-.helloButton {
-  @extend .button;
-  &:hover {
-    background: #f4a261;
-  }
-  @include themed() {
-    color: t('accent');
-    border: 2px solid t('accent');
-  }
-}
-.introImg {
-  border-radius: 50%;
-  box-shadow: 20px 12px 0px 0px #f4a261;
-  margin: auto;
-}
-
-span.wave {
-  animation: wave 2.7s infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 // skills
 .experienceContainer {
   height: 45vh;
   max-height: 359px;
-
   @include themed() {
     background: t('bg');
   }
@@ -120,13 +11,10 @@ span.wave {
       height: 100%;
     }
   }
-  @media (max-width: $small) {
-    height: fit-content;
-    min-height: 359px;
-  }
 }
 .experienceWrapper {
-  @extend .contentBoundary;
+  width: 90vw;
+  max-width: 1400px;
   display: grid;
   grid-template-rows: 120px auto;
   grid-template-columns: 1fr;
@@ -197,67 +85,57 @@ span.wave {
     line-height: 1.5;
   }
 }
-.dot {
-  height: 20px;
-  width: 20px;
-  opacity: 0.4;
-  background: white;
-  border-radius: 50%;
-  margin-right: 8px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  &.active {
-    opacity: 0.9;
-  }
-}
-
-// footer  {
 .footer {
   @extend .container;
-  height: 30vh;
-  max-height: 280px;
-  min-height: 200px;
+  height: 220px;
+  width: 100vw;
   @include themed() {
-    background: t('accent');
+    background: t('primary');
   }
 }
-.footerWrapper {
-  @extend .contentBoundary;
-  color: white !important;
-  & p {
-    margin-block-end: 1em;
-  }
-  & a {
-    font-weight: bold;
-    color: white;
-  }
+.footerContent {
+  padding: 1.5em;
+  width: 90vw;
+  max-width: 1400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.footerMesg {
-  &::after {
-    content: '';
-    display: block;
-    width: 44px;
-    border-bottom: 3px solid white;
-  }
+.footerCaption {
+  margin-top: 0em;
 }
 .externalLinks {
   display: flex;
   justify-content: space-between;
-  width: 150px;
+  width: 60%;
+  max-width: 180px;
 }
 .linkIcon {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.3s;
-  height: 36px;
-  width: 36px;
+  height: 42px;
+  width: 42px;
+  font-size: 20px;
   border-radius: 50%;
-  border: 1px solid white;
-  color: white;
+  @include themed() {
+    background: white;
+    color: t('primary');
+  }
   &:hover {
     opacity: 1;
+  }
+}
+
+.resumeBtn {
+  @extend .button;
+  margin-left: auto;
+  @include themed() {
+    background: t('secondary');
+    color: t('text');
   }
 }

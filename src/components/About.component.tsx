@@ -1,37 +1,81 @@
-import React from 'react';
-import { profile } from '../assets';
+import React, { useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
+import { profile } from '../assets/index';
 
-const About = () => {
+const About: React.FC = () => {
+  const [display, setDisplay] = useState(false);
+  const aboutRef = useRef<HTMLDivElement>(null!);
+  const callback = (entries: { isIntersecting: boolean }[]) => {
+    if (display) return;
+    setDisplay(entries[0].isIntersecting);
+  };
+  const observer = new IntersectionObserver(callback, { root: aboutRef.current });
+
+  useEffect(() => {
+    const divRef = aboutRef.current;
+    observer.observe(divRef);
+    if (display) observer.unobserve(divRef);
+    return () => observer.unobserve(divRef);
+  }, [display, observer]);
+
   return (
-    <div id="ABOUT" className="aboutContainer">
-      <div className="aboutWrapper">
-        <div className="header">
-          <h2>About me</h2>
+    <>
+      <section id="About" className="blockContainer">
+        <div className={classNames('blockContent', { animateBlock: display })}>
+          <h2 className="blockSubtitle">I'm Reeann, but call me Ree.</h2>
+          <h4 className="sectionCaption">
+            I began my programming journey in 2017 and I have since worked in building medical software, static sites
+            and tools for automation testing. I am excited by animations, conversations about design and delivering
+            intuitive, dynamic user experiences.
+          </h4>
         </div>
-        <div className="image">
-          <img className="profileImg" src={profile} alt="profile" />
+      </section>
+      <section id="Experience" className="skills" ref={aboutRef}>
+        <div className={classNames('skillsContent', { animateSkills: display })}>
+          <div className="skillsColumn">
+            <i className="fas fa-laptop-code" />
+            <h4>Front-end Developer</h4>
+            <p className="description">
+              I specialize in creating web apps with React and building beautifully simple interfaces.
+            </p>
+            <p className="subtitle">Languages I speak:</p>
+            <p className="description">JavaScript, React, TypeScript, HTML5, CSS3, SCSS</p>
+            <p className="subtitle">Libraries & tools:</p>
+            <p className="description">Redux </p>
+            <p className="description">GraphQL </p>
+            <p className="description">Jest</p>
+            <p className="description">Enzyme</p>
+            <p className="description">Lodash</p>
+          </div>
+          <div className="skillsColumn">
+            <i className="fas fa-pencil-ruler" />
+            <h4>Aspiring Designer</h4>
+            <p className="description">
+              My design journey has only just begun but it is a crucial part of my web development growth.
+            </p>
+            <p className="subtitle">Things I'm learning:</p>
+            <p className="description">UX/UI, smarter responsive design, color theory, accessibility</p>
+            <p className="subtitle">Design tools:</p>
+            <p className="description">Adobe XD</p>
+            <p className="description">Figma</p>
+          </div>
         </div>
-        <div className="aboutDescription">
-          <p>
-            My name is Reeann, but I commonly go by Ree. I&apos;m based in sunny Miami as a professional web developer
-            and practicing designer.
-          </p>
-          <p>
-            I began my programming journey in 2017 and I quickly fell in love with making reliable and interactive UIs
-            in an ever-changing front end ecosystem. I&apos;m excited by subtle animations, conversations about design
-            and delivering an intuitive user experience in a complex workflow.
-          </p>
-          <p>
-            As a feature team lead, I worked more closely with product managers and designers to tackle our users&apos;
-            biggest challenges and deliver features that help simplify their workday.
-          </p>
-          <p>
-            In my down time, I maintain balance with exercise, reading, being outside (fighting off mosquitoes) and
-            working towards my goal of owning a dog [or two].
-          </p>
+      </section>
+      <section className="profile">
+        <div className="profileContent">
+          <div className="profileImage">
+            <img src={profile} alt="profile" />
+          </div>
+          <div className="profileText">
+            <p>
+              I dove into the world of programming when I moved to Miami in 2017 after living in Germany for 2.5 years,
+              and I've never been happier! Aside from writing code, I enjoy outdoor activities, donating my skills and
+              working towards my goal of owning a dog.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

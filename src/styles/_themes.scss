@@ -1,10 +1,7 @@
-//sizes
-$xSmall: 350px;
-$small: 464px;
-$medium: 770px;
-$large: 1200px;
-
-$ipad: 1000px;
+// sizes
+$max-width: 1400px;
+$medium: 768px;
+$small: 480px;
 
 // font-sizes
 $xSmallPadding: 16px;
@@ -14,9 +11,13 @@ $xSmallText: 10px;
 // other colors
 $light: white;
 $dark: black;
-$secondaryFont: 'Antic Didone', serif;
+// $secondaryFont: 'Antic Didone', serif;
+$secondaryFont: 'Nanum Gothic', sans-serif;
 $boxShadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
 $rainbowFont: pink;
+
+// brand - orange
+// accents - yellow, green, blue
 
 // themes
 $themes: (
@@ -26,6 +27,21 @@ $themes: (
     accentShadow: #eeddff,
     text: $dark,
     accentText: $light,
+  ),
+  serene: (
+    bg: #8d999d,
+    accent: #0e303b,
+    accentShadow: #b9d3c7,
+    text: $light,
+    accentText: #82b9b7,
+  ),
+  summer: (
+    bg: $light,
+    primary: #a2dda5,
+    secondary: #ff6b6b,
+    tertiary: #ffc87c,
+    text: white,
+    accentText: #525174,
   ),
   deco: (
     bg: #f6d97b,

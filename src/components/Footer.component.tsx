@@ -4,14 +4,9 @@ import { NavItem } from '../utils/types';
 
 const Footer = () => {
   return (
-    <div id="CONTACT" className="footer">
-      <div className="footerWrapper">
-        <div className="footerMesg">
-          <h2>Let&apos;s chat!</h2>
-        </div>
-        <p>
-          Drop me a line at <a href="mailto:reeannvirginia@gmail.com">reeannvirginia@gmail.com.</a>
-        </p>
+    <div id="Contact" className="footer">
+      <div className="footerContent">
+        <h3 className="footerCaption">Interested in learning more or working together?</h3>
         <div className="externalLinks">
           {links.map(({ display, icon, url }: NavItem) => (
             <a key={display} className="linkIcon" href={url} target="_blank" rel="noopener noreferrer">
@@ -19,6 +14,14 @@ const Footer = () => {
             </a>
           ))}
         </div>
+        <a
+          className="resumeBtn"
+          href={process.env.PUBLIC_URL + '/resume.pdf'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          RESUME
+        </a>
       </div>
     </div>
   );

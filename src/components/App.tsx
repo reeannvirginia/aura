@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Intro, About, Projects, Experience, Footer } from '.';
+import { Intro, About, Projects, Footer } from './index';
 
 const App = () => {
   useEffect(() => {
@@ -8,10 +8,9 @@ const App = () => {
     }
   }, []);
   return (
-    <div className={`App theme-deco`}>
+    <div className={`App theme-summer`}>
       <Intro />
       <About />
-      <Experience />
       <Projects />
       <Footer />
     </div>
